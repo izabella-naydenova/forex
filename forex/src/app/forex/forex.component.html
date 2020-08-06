@@ -1,0 +1,40 @@
+<div class="forex-container">
+
+  <div class="company-title">
+    <h1>Forex trading page</h1>
+    <span>{{currentDate | date: 'MMM d, y'}}
+      <i nz-icon
+         nzType="clock-circle"
+         nzTheme="outline"
+         nz-size="medium">
+      </i>
+    </span>
+    <img src="./assets/logo/forex-logo.png">
+  </div>
+
+  <div class="currencies-container">
+    <nz-list nzItemLayout="horizontal">
+      <nz-list-item class="list-item"
+                    *ngFor="let rate of rates">
+        <div class="currency-container">
+          <div class="currency-img">
+            <img [src]="'./assets/currency-images/' + rate.currency + '.png' ">
+            <img class="base-img"
+                 [src]="'./assets/currency-images/' + base + '.png' ">
+          </div>
+          <div class="currency-title">
+            <h3>{{rate.currency}}</h3>
+            <p>{{rate.currency}} / {{base}}</p>
+          </div>
+          <div class="value-wrapper">
+            <p class="currency-rate"
+               [ngClass]="rate?.indicator">{{rate.value |  number:'1.4-4'}}
+            </p>
+          </div>
+        </div>
+      </nz-list-item>
+      <nz-list-empty *ngIf="rates?.length === 0"></nz-list-empty>
+    </nz-list>
+  </div>
+
+</div>

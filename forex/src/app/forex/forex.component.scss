@@ -1,0 +1,75 @@
+.forex-container {
+  .company-title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    padding: 10px;
+    border-radius: 4px;
+    box-shadow: 3px 3px 6px darkgrey;
+    img {
+      width: 100px;
+      height: 100px;
+    }
+    h1 {
+      color: #009eb0;
+    }
+    span {
+      display: flex;
+      align-items: center;
+    }
+    span i {
+      padding-left: 5px;
+      font-size: 30px;
+      color: #70b354;
+    }
+  }
+
+  .list-item {
+    background: rgba(173, 165, 165, 0.15);
+    border-bottom: 1px solid grey;
+    border-radius: 4px;
+    .currency-container {
+      display: flex;
+      width: 100%;
+      padding: 0 12px;
+      .currency-img {
+        position: relative;
+        img {
+          height: 30px;
+          width: 55px;
+          border-radius: 4px;
+          &.base-img {
+            z-index: -1;
+            position: absolute;
+            left: 20px;
+            top: 20px;
+            border-radius: 4px;
+          }
+        }
+      }
+      .currency-title {
+        flex: 1;
+        padding-left: 40px;
+      }
+      .value-wrapper {
+        display: flex;
+        align-items: center;
+        .currency-rate {
+          font-weight: 500;
+          padding: 0px 3px;
+          border-radius: 4px;
+          background: white;
+          &.up {
+            background: green;
+            color: white;
+          }
+          &.down {
+            background: red;
+            color: white;
+          }
+        }
+      }
+    }
+  }
+}
